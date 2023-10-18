@@ -1,12 +1,16 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["Enugu", "Anambra", "Imo", "Ebonyi", "Abia"];
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+interface Props {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: Props) {
+  const [selectedIndex, setSelectedIndex] = useState(-1); // -1 will be the default value for selectedIndex
 
   return (
     <>
-      <h1>Header</h1>
+      <h1>{heading}</h1>
       {items.length == 0 && <p>No items found</p>}
       <ul className="list-group">
         {items.map((item, index) => (
