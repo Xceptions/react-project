@@ -1,11 +1,12 @@
 interface AlertParam {
-  text: string;
+  children: string;
+  type: string;
 }
 
-function Alert({ text }: AlertParam) {
+function Alert({ children, type }: AlertParam) {
   return (
     <>
-      <div className="alert alert-primary">{text}</div>
+      <div className={"alert alert-" + type}>{children}</div>
     </>
   );
 }
